@@ -1,9 +1,28 @@
-<header class="rn-header haeder-default black-logo-version header--fixed header--sticky">
-<nav>
-    <ul class="flex gap-1">
-        <li>Section 1</li>
-        <li>Section 2</li>
-        <li>Section 3</li>
+---
+import Link from "./Link.astro";
+
+---
+
+<header class='blurLalala flex justify-between p-4 sticky top-0'>
+<div>
+<h2 class='text-2xl'>Guillermo Hedzko</h2>
+</div>
+    <nav>
+    <ul class="flex gap-4">
+       <li><Link title='Section 1' href='#section1'/></li>
+       <li><Link title='Section 2' href='#section2'/></li>
+       <li><Link title='Section 3' href='#section3'/></li>
     </ul>
 </nav>
 </header>
+
+<style is:global>
+    .blurLalala::before {
+        background: rgba(72, 76, 121, 0.24);
+/* border-radius: 16px; */
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.2px);
+-webkit-backdrop-filter: blur(5.2px);
+/* border: 1px solid rgba(86, 91, 150, 0.3) */
+    }
+    </style>
