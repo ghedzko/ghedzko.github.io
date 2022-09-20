@@ -1,16 +1,23 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Section from "../sections/section.astro";
 ---
 
 <Layout title="Welcome to My WEB">
-	<main>
-		<h1>Welcome to Guillermo Hedzko WEB</h1>
+  <main>
 
-	</main>
+    <Section title="Seccion 1" id="section1" />
+    <Section title="Seccion 2" id="section2" />
+    <Section title="Seccion 3" id="section3" />
+  </main>
 </Layout>
 
 <style>
-h1{
-	font-size: 10px;
-}
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  html{
+    font-family: Poppins;
+  }
 </style>

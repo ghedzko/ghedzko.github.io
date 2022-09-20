@@ -1,42 +1,42 @@
 ---
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 export interface Props {
-	title: string;
+  title: string;
 }
-
-const { title } = Astro.props;
+const { title, name } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Header/>
-		<slot />
-		<Footer/>
-	</body>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+    <style>
+
+    </style>
+
+    <style is:global>
+      h1 {
+        font-size: 3rem;
+      }
+      html {
+        background-color: bisque;
+      }
+    </style>
+  </body>
 </html>
-<style>
-
-
-
-
-
-
-
-</style>
-
-<style is:global>
-	h1 {
-		font-size: 3rem;
-	}
-
-	
-</style>
