@@ -1,0 +1,11 @@
+---
+export type Props = {
+	title: string;
+    id: string;
+}
+const { title , id} = Astro.props;
+---
+
+<section id={id} class='flex h-screen bg-gray-100 m-4'>
+    <h2>{title}</h2>
+</section>
