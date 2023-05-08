@@ -1,28 +1,27 @@
 ---
 import Link from "./Link.astro";
-
 ---
 
-<header class='blurLalala flex justify-between p-4 sticky top-0'>
-<div>
-<h2 class='text-2xl'>Guillermo Hedzko</h2>
-</div>
-    <nav>
+<header class="bg-blur flex justify-between p-4 sticky top-0">
+  <div>
+    <h2 class="text-2xl">Guillermo Hedzko</h2>
+  </div>
+  <nav>
     <ul class="flex gap-4">
-       <li><Link title='Section 1' href='#section1'/></li>
-       <li><Link title='Section 2' href='#section2'/></li>
-       <li><Link title='Section 3' href='#section3'/></li>
+      <li><Link title="About Me" href="#about" /></li>
+      <li><Link title="Education" href="#education" /></li>
+      <li><Link title="Work Experience" href="#work-experience" /></li>
+      <li><Link title="Skills" href="#skills" /></li>
+      <li><Link title="Courses" href="#courses" /></li>
     </ul>
-</nav>
+  </nav>
 </header>
 
 <style is:global>
-    .blurLalala::before {
-        background: rgba(72, 76, 121, 0.24);
-/* border-radius: 16px; */
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5.2px);
--webkit-backdrop-filter: blur(5.2px);
-/* border: 1px solid rgba(86, 91, 150, 0.3) */
-    }
-    </style>
+  .bg-blur {
+    background-color: rgba(72, 76, 121, 0.24);
+    backdrop-filter: blur(5.2px);
+    -webkit-backdrop-filter: blur(5.2px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+</style>
