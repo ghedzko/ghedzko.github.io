@@ -1,8 +1,173 @@
 ---
-// Aquí puedes importar estilos o componentes si es necesario
+import Card from '../components/Card.astro';
+
+const experiences = [
+  {
+    title: 'WEB & Mobile Developer',
+    company: 'MOREAN',
+    location: 'www.morean.co',
+    date: '2020 - Present',
+    description: [
+      'Frontend Developer (React)',
+      'Mobile Developer (React Native)',
+      'Backend Developer (Golang)',
+      'Redux & Redux toolkit',
+
+    ],
+    tools: [
+           'Jest',
+      'Tailwind',
+      'Sass',
+      'Firebase & Firestore',
+      'React Router',
+      'React Navigator',
+      'AWS',
+      'Github',
+      'Gitlab',
+      'Git',
+      'HTML',
+      'CSS',
+      'Javascript',
+      'React',
+      'Node',
+      'MongoDB',
+      'Golang',
+
+    ]
+  },
+  {
+    title: 'Freelance Developer',
+    company: 'Salvador Palmiciano',
+    location: 'https://salva.io/',
+    date: '2018 - 2020',
+    description: [
+      'Frontend Developer (React)',
+      'Backend Developer (Node)'
+    ],
+    tools:[
+      'HTML',
+      'CSS',
+      'Javascript',
+      'PHP',
+      'MySQL',
+      'React',
+      'Node',
+      'MongoDB',
+      'Git',
+      'Github',
+      'Gitlab',
+      'AWS',
+      'Firebase',
+      'Firestore',
+      'Tailwind',
+      'Sass',
+      'Jest',
+      'React Router',
+      'React Navigator',
+      'Redux',
+      'Redux Toolkit',
+      'React Native',
+      'Golang',
+      'Python',
+      'Visual Studio Code',
+      'Atom',
+      'IntelliJ',
+      'Android Studio',
+      'XCode',
+      'Postman',
+      'Insomnia',
+      'Figma',
+      'Microsoft SQL Server',
+      'Microsoft Windows',
+      'Microsoft Windows Server',
+      'Microsoft Windows Terminal',
+      'Microsoft Windows Terminal',
+    
+    ]
+  },
+    {
+    title: 'IT Instructor',
+    company: 'Centro de Formación Profesional N° 656',
+    location: 'Epuyén - El Maitén',
+    date: '2008 - Present',
+    description: [
+      'IT Instructor of IT courses: Programmer',
+      'PC Operator',
+      'Computer Operator for Administration and Management',
+      'Database Operator',
+      'Computer Aided Drawing (AutoCad)',
+      'Repair and maintenance of computer equipment',
+      'Multimedia Design',
+    ],
+    tools:[
+            'Adobe XD',
+      'Adobe Photoshop',
+      'Adobe Illustrator',
+      'Adobe Premiere',
+      'Adobe After Effects',
+      'Adobe Audition',
+      'Adobe Lightroom',
+      'Adobe InDesign',
+      'Adobe Acrobat',
+      'Microsoft Office',
+      'Microsoft Teams',
+      'Microsoft Outlook',
+      'Microsoft Excel',
+      'Microsoft Word',
+      'Microsoft PowerPoint',
+      'Microsoft Publisher',
+      'Microsoft Access',
+      'Microsoft Project',
+      'Microsoft Visio',
+      'Microsoft OneNote',
+      'Microsoft SharePoint',
+      'Microsoft Power BI',
+
+    ]
+    
+  },
+  {
+    title: 'IT Coordinator',
+    company: 'Alto Palermo S.A. - I.R.S.A.',
+    location: 'Moreno 877 - Capital Federal - Buenos Aires',
+    date: '1999 - 2007',
+    description: [
+      'Service Desk Coordinator (2006-2007)',
+      'Technology Coordinator of Abasto Shopping (2005-2007)',
+      'Technology Coordinator Alto Palermo Shopping (2004-2005)',
+      'Computer Technician Alto Palermo Shopping (2001-2004)',
+      'IRSA telephony technician (1999-2001)',
+    ],
+    tools:[
+      'Microsoft Windows',
+      'Microsoft Windows Server',
+      'Microsoft Windows Terminal',
+      'MS SQL Server',
+      'Visual Studio',
+      'Simax',
+      'Microsoft Office',
+      'Microsoft Visio',
+
+    ]
+  },
+  {
+    title: 'Intern',
+    company: 'Siemens S.A.',
+    location: '',
+    date: '1997 - 1998',
+    description: [
+      'Repair and reconditioning of telephony equipment',
+    ],
+  },
+];
 ---
 
 <section id="work" class="flex flex-col h-auto bg-gray-100 m-4">
   <h2 class="text-xl font-bold mb-4">Work Experience</h2>
-  <!-- Agrega el contenido de la sección de Work Experience aquí -->
+  {experiences.map((experience) => {
+    console.log(experience)
+    return(
+    <Card experiece={experience} />
+  )})
+    }
 </section>
