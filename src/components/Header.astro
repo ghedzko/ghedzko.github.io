@@ -2,9 +2,10 @@
 import Link from "./Link.astro";
 ---
 
-<header class="bg-blur flex justify-between p-4 sticky top-0">
-  <div>
-    <h2 class="text-2xl">Guillermo Hedzko</h2>
+<header class="flex justify-between p-4 sticky top-0 z-10">
+  <div class="flex">
+    <img src="public/images/code.svg" class="w-9" alt="code">
+    <h2 class="text-2xl text-black font-semibold">Guillermo Hedzko</h2>
   </div>
   <nav>
     <ul class="flex gap-4">
@@ -17,11 +18,4 @@ import Link from "./Link.astro";
   </nav>
 </header>
 
-<style is:global>
-  .bg-blur {
-    background-color: rgba(72, 76, 121, 0.24);
-    backdrop-filter: blur(5.2px);
-    -webkit-backdrop-filter: blur(5.2px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  }
-</style>
+

@@ -1,0 +1,55 @@
+:root {
+    --background: #282c34;
+    --blur-background: rgba(92, 99, 112, 0.8);
+    --foreground: #abb2bf;
+    --comment: #5c6370;
+    --accent: #61afef;
+    --error: #e06c75;
+    --warning: #d19a66;
+    --info: #56b6c2;
+    --success: #98c379;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section {
+    background-color: var(--blur-background);
+    margin: 2rem auto;
+    max-width: 960px;
+    padding: 1.45rem 1.0875rem;
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+}
+
+header{
+        background-color: rgba(72, 76, 121, 0.24);
+        backdrop-filter: blur(5.2px);
+        -webkit-backdrop-filter: blur(5.2px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        max-width: 960px;
+        width: 100%;
+    }
+
+.shadow-one-dark {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+.bg-neumorphism {
+    background-color: #e0e0e0;
+}
+
+.shadow-neumorphism {
+    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8), 6px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-neumorphism-inset {
+    box-shadow: inset -6px -6px 10px rgba(255, 255, 255, 0.8), inset 6px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-neumorphism-pressed {
+    box-shadow: inset -4px -4px 6px rgba(255, 255, 255, 0.8), inset 4px 4px 6px rgba(0, 0, 0, 0.2);
+}

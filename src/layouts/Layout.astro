@@ -21,22 +21,13 @@ const { title } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
     <Header />
     <slot />
     <Footer />
-    <style>
 
-    </style>
 
-    <style is:global>
-      h1 {
-        font-size: 3rem;
-      }
-      html {
-        background-color: bisque;
-      }
-    </style>
   </body>
 </html>
