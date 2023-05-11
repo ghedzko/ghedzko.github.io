@@ -12,7 +12,7 @@ const { experiece} = Astro.props;
 const { title, company, location, date, description } = experiece;
 ---
 
-<article class="p-4 bg-neumorphism rounded-lg shadow-neumorphism">
+<article class="p-4 bg-gray-300 rounded-lg mb-5 ">
   <h3 class="text-lg font-bold mb-1">{title}</h3>
   <p class="text-sm text-gray-600 mb-1">{company} | {location} | {date}</p>
   <ul class="list-disc pl-4">
@@ -24,7 +24,7 @@ const { title, company, location, date, description } = experiece;
    {experiece.tools && (
     <div class="mt-2">
       {experiece.tools.map((tool) => (
-        <span class="inline-block shadow-one-dark bg-gray-400 text-white text-xs py-1 px-2 rounded-full mr-2 mb-2">{tool}</span>
+        <span class="inline-block bg-neumorphism rounded-lg shadow-neumorphism bg-gray-400 text-white text-xs py-1 px-2 rounded-full mr-2 mb-2">{tool}</span>
       ))}
     </div>
   )}
