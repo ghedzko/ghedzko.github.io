@@ -1,0 +1,70 @@
+---
+const logos = [
+  'angular',
+  'astro',
+  'bootstrap',
+  'css',
+  'go',
+  'html',
+  'js',
+  'laravel',
+  'mongo',
+  'react-native',
+  'react',
+  'redux',
+  'rust',
+  'tailwind',
+  'ts',
+  'vue'
+];
+---
+
+<div id="background">
+  {logos.map((logo) => (
+    <img class="logo" src={`/images/logos/${logo}.svg`} alt={`${logo} logo`} />
+  ))}
+</div>
+
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const logos = document.querySelectorAll('.logo');
+    console.log(window.innerWidth, window.innerHeight)
+    logos.forEach((logo) => {
+    //   const htmlLogo = logo as HTMLElement;
+      const x = Math.floor(Math.random() * window.innerWidth);
+      const y = Math.floor(Math.random() * window.innerHeight);
+      logo.style.left = `${x}px`;
+      logo.style.top = `${y}px`;
+      console.log(logo)
+    });
+  });
+</script>
+
+<style>
+  #background {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    z-index: -1;
+  }
+  .logo {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.5;
+  }
+  @keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(-20px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }
+</style>

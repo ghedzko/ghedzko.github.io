@@ -34,7 +34,15 @@ header{
         max-width: 960px;
         width: 100%;
     }
+.logo-container {
+    position: relative;
+    overflow: hidden;
+}
 
+.logo {
+    position: absolute;
+    pointer-events: none;
+}
 .shadow-one-dark {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
 }
