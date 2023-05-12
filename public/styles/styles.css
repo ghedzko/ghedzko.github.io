@@ -48,6 +48,10 @@ header li {
     -webkit-text-fill-color: transparent;
 }
 
+.bg-nav{
+    background-color: #282c34eb;
+}
+
 .logo-container {
     position: relative;
     overflow: hidden;

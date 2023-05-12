@@ -2,13 +2,18 @@
 import Link from "./Link.astro";
 ---
 
-<header class="flex justify-between p-4 sticky top-0 z-10">
-  <div class="flex">
+<header class=" flex justify-between items-center p-4 sticky top-0 z-10">
+  <button id="menu-toggle" class="lg:hidden">
+    <svg viewBox="0 0 20 20" fill="currentColor" class="menu w-6 h-6">
+      <path fill-rule="evenodd" d="M2 5a1 1 0 011-1h14a1 1 0 110 2H3a1 1 0 01-1-1zm0 6a1 1 0 011-1h14a1 1 0 110 2H3a1 1 0 01-1-1zm1 5a1 1 0 100 2h14a1 1 0 100-2H3z" clip-rule="evenodd"></path>
+    </svg>
+  </button>
+  <div class="flex items-center">
     <img src="images/code.svg" class="w-9" alt="code">
-    <h2 class="text-2xl text-black font-semibold ml-1 ">Guillermo Hedzko</h2>
+    <h2 class="text-2xl text-black font-semibold ml-1">Guillermo Hedzko</h2>
   </div>
-  <nav>
-    <ul class="flex gap-4">
+  <nav id="nav" class="absolute top-full bg-nav left-0 hidden lg:flex lg:relative lg:bg-transparent">
+    <ul id="nav-items" class="flex flex-col lg:flex-row gap-4 p-4 lg:p-0">
       <li><Link title="About Me" href="#about" /></li>
       <li><Link title="Education" href="#education" /></li>
       <li><Link title="Work Experience" href="#work-experience" /></li>
@@ -18,4 +23,24 @@ import Link from "./Link.astro";
   </nav>
 </header>
 
+<script is:inline>
+window.addEventListener('DOMContentLoaded', (event) => {
+  const menuToggle = document.querySelector('#menu-toggle');
+  const nav = document.querySelector('#nav');
+  const navItems = document.querySelectorAll('#nav-items li');
 
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('hidden');
+    nav.classList.toggle('flex');
+  });
+
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      if(!nav.classList.contains('hidden')) {
+        nav.classList.add('hidden');
+        nav.classList.remove('flex');
+      }
+    });
+  });
+});
+</script>
