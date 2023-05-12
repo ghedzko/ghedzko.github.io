@@ -28,14 +28,21 @@ const logos = [
 <script is:inline>
   window.addEventListener('DOMContentLoaded', (event) => {
     const logos = document.querySelectorAll('.logo');
-    console.log(window.innerWidth, window.innerHeight)
+    const logoSize = 50; // size of a logo
+    const columns = Math.floor(window.innerWidth / logoSize);
+    const rows = Math.floor(window.innerHeight / logoSize);
+    const cells = new Set(); // to keep track of filled cells
+
     logos.forEach((logo) => {
-    //   const htmlLogo = logo as HTMLElement;
-      const x = Math.floor(Math.random() * window.innerWidth);
-      const y = Math.floor(Math.random() * window.innerHeight);
+      let x, y;
+      do {
+        x = Math.floor(Math.random() * columns) * logoSize;
+        y = Math.floor(Math.random() * rows) * logoSize;
+      } while (cells.has(`${x},${y}`)); // generate new position if cell is already filled
+
+      cells.add(`${x},${y}`); // mark cell as filled
       logo.style.left = `${x}px`;
       logo.style.top = `${y}px`;
-      console.log(logo)
     });
   });
 </script>
