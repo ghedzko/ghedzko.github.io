@@ -1,15 +1,24 @@
 ---
-interface Props { experiece:{
+
+
+interface Project {
+  name: string;
+  technologies: string[];
+  description: string;
+}
+interface Props { experience:{
   title: string;
   company: string;
   location: string;
   date: string;
   description: string[];
   tools?: string[];
+  projects?: Project[];
   
 }}
-const { experiece} = Astro.props;
-const { title, company, location, date, description } = experiece;
+const { experience} = Astro.props;
+const { title, company, location, date, description, projects } = experience;
+console.log(projects)
 ---
 
 <article class="p-4 bg-gray-300 rounded-lg mb-5 ">
@@ -21,12 +30,31 @@ const { title, company, location, date, description } = experiece;
     ))
     }
   </ul>
-   {experiece.tools && (
+   {experience.tools && (
     <div class="mt-2">
-      {experiece.tools.map((tool) => (
-        <span class="inline-block bg-neumorphism rounded-lg shadow-neumorphism bg-gray-400 text-white text-xs py-1 px-2 rounded-full mr-2 mb-2">{tool}</span>
+      {experience.tools.map((tool) => (
+        <span class="inline-block bg-neumorphism shadow-neumorphism bg-gray-400 text-white text-xs py-1 px-2 rounded-full mr-2 mb-2">{tool}</span>
       ))}
     </div>
   )}
+  <>
+  {projects && (
+    <div class="mt-4">
+      <h4 class="text-md font-bold mb-2 text-slate-800">Projects:</h4>
+      {projects.map(project => (
+        <div class="mb-3">
+          <h5 class="text-sm font-bold text-slate-600">{project.name}</h5>
+          <ul class="list-disc pl-4 text-sm text-slate-500">
+            {project.technologies.map(tech => (
+              <li>{tech}</li>
+            ))}
+          </ul>
+          <p class="text-sm text-slate-800">{project.description}</p>
+        </div>
+      ))}
+    </div>
+  )}
+  
+  </>
 </article>
 
