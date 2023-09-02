@@ -19,10 +19,10 @@ jobs:
       - name: Check out your repository using git
         uses: actions/checkout@v2
 
-      - name: Use Node.js 18.10
+      - name: Use Node.js 18.14.1
         uses: actions/setup-node@v2
         with:
-          node-version: "18.10"
+          node-version: "18.14.1"
           cache: "npm"
 
       # Not using npm? Change `npm ci` to `yarn install` or `pnpm i`
